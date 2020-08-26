@@ -1,0 +1,11 @@
+.je-form{
+  width: auto;
+  
+  .je-form-item{display: inline-block;margin-bottom:20px;vertical-align: top;display:-webkit-box;display:flex;-webkit-box-align: center;box-align: center;-webkit-box-orient: vertical;box-orient: vertical;position: relative;}
+  .je-form-item-label{display: flex;padding-right: 10px;}
+  .je-form-item-content{
+    display: flex;box-flex:1;flex: 1;position: relative;
+    .je-form-item-msg{color: #f56c6c;font-size: 12px;line-height: 1;padding-top: 3px;position: absolute;top: 100%;left: 0;}
+  }
+  .je-form-item-required::before{content: "*";color: #f56c6c;margin-right: 4px;line-height: 1;font-family: SimSun;font-size: 14px;}
+}

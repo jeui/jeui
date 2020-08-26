@@ -1,0 +1,157 @@
+.je-upload {
+  display: inline-block;
+  position: relative;
+}
+.je-upload input[type='file'] {
+  display: none;
+}
+.je-upload-select {
+  display: block;
+  position: relative;
+}
+.je-upload-ondrag {
+  width: 100%;
+  background-color: #fff;
+  border: 1px #d3d3d3 dashed;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.je-upload-ondrag .dragicon {
+  margin-top: 30px;
+  color: #ccc;
+}
+.je-upload-ondrag .dragtips {
+  margin-bottom: 30px;
+}
+.je-upload-ondrag:hover,
+.je-upload-ondrag.active {
+  border: 1px #409eff dashed;
+}
+.je-upload-tips {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.je-upload-list {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.je-upload-image {
+  width: 100%;
+  overflow: hidden;
+}
+.je-upload-image ul {
+  width: 100%;
+  display: block;
+}
+.je-upload-image ul li {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.je-upload-image .image-item {
+  border: 1px #ddd solid;
+  margin-right: 10px;
+}
+.je-upload-image .image-item img {
+  width: 100%;
+  height: 100%;
+}
+.je-upload-image .image-item .mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.je-upload-image .image-item .mask i {
+  padding: 5px;
+  cursor: pointer;
+}
+.je-upload-image .image-item:hover .mask {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.je-upload-image .upbtn {
+  border: 1px #d3d3d3 dashed;
+  color: #ccc;
+  cursor: pointer;
+}
+.je-upload-image .upbtn span {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.je-upload-image .upbtn:hover {
+  border: 1px #409eff dashed;
+}
+
+.je-upload-file {
+  width: 100%;
+  overflow: hidden;
+}
+.je-upload-file li {
+  width: 100%;
+  position: relative;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px #fff dashed;
+  margin: 5px 0;
+  display: inline-block;
+  overflow: hidden;
+}
+.je-upload-file li:hover {
+  background-color: #f6f6f6;
+}
+.je-upload-file .file-item {
+  height: 18px;
+  line-height: 18px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  align-items: center;
+}
+.je-upload-file .file-item p {
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+.je-upload-file .file-item p.progress-inner {
+  width: 100%;
+  height: 6px;
+  background-color: #ececec;
+  border-radius: 100px;
+  margin-right: 8px;
+}
+.je-upload-file .file-item p .progress-bg {
+  height: 6px;
+  background-color: #19be6b;
+  border-radius: 100px;
+  display: block;
+}

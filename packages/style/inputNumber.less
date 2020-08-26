@@ -1,0 +1,43 @@
+.je-inputNumber{line-height: normal;background-color:#fff;display: inline-block;}
+.je-inputNumber-box{display: flex;border-collapse: separate;position: relative;vertical-align: middle;}
+.je-inputNumber .je-input{width: 100%;display: flex;box-flex:1;flex: 1;line-height:1.42857143;border:1px solid #d9d9d9;outline: 0;transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;-webkit-box-sizing: border-box!important;-moz-box-sizing: border-box!important;box-sizing: border-box!important;border-radius: 4px;position: relative;text-align: center;}
+.je-inputNumber .je-input[disabled]{cursor:not-allowed;background-color: #F5F5F5;}
+/* .je-inputNumber .je-input:focus {outline: 0;box-shadow: 0 0 0 2px rgba(45,140,240,.25);} */
+.je-inputNumber.hover .je-input,.je-inputNumber .je-input:focus, .je-inputNumber .je-input:hover {border-color: #57a3f3;}
+.je-inputNumber.hover .je-input:disabled,.je-inputNumber .je-input:disabled:focus, .je-inputNumber .je-input:disabled:hover {border-color: #d9d9d9;}
+.je-inputNumber button{width:28px;font-weight:600;color: #333333;text-align: center;background-color: #f8f8f9;align-items: center;justify-content: center;display: flex;overflow: hidden;}
+.je-inputNumber button:hover{color: #57a3f3;cursor: pointer;}
+
+.je-inputNumber.without .je-input{border-radius: 4px;padding:5px 32px;}
+.je-inputNumber.without button{height:auto;position: absolute;z-index: 2;}
+.je-inputNumber.without button:first-child{border-radius: 4px 0 0 4px;border-right:1px solid #d9d9d9;top:1px;left:1px;bottom: 1px;}
+.je-inputNumber.without button:last-child{border-radius: 0 4px 4px 0;border-left:1px solid #d9d9d9;top:1px;right:1px;bottom: 1px;}
+.je-inputNumber.without button[disabled]{cursor:not-allowed!important;background-color:#f6f6f6;color:#bbbbbb!important;}
+.je-inputNumber.without button[disabled]::before{color:#bbbbbb;}
+
+.je-inputNumber.group .je-input{border-radius: 4px;padding:5px 34px 5px 5px;}
+.je-inputNumber.group .wrap{height:auto;border-left: 1px solid #d9d9d9;border-radius:0px 4px 4px 0px;overflow: hidden;position: absolute;z-index: 2;top:1px;right:1px;bottom: 1px;}
+.je-inputNumber.group .wrap button{border:none;height: 50%;font-size: 12px;}
+.je-inputNumber.group .wrap button:hover{background-color:#ffffff;cursor: pointer;font-weight: 700;}
+.je-inputNumber.group .wrap button:last-child{border-top: 1px solid #d9d9d9;top: 0px;}
+.je-inputNumber.group .wrap button[disabled],
+.je-inputNumber.group .wrap button[disabled]:hover{cursor:not-allowed!important;background-color:#f6f6f6;color:#bbbbbb;font-weight: 400;}
+.je-inputNumber.group .wrap button[disabled]::before{color:#bbbbbb;}
+
+.je-inputNumber .icon-plus,.je-inputNumber .icon-minus,
+.je-inputNumber .icon-arrow-up,.je-inputNumber .icon-arrow-down{width: 12px;height: 12px;display: flex;align-items: center;justify-content: center;}
+.je-inputNumber .icon-plus::before {width: 100%;border-top: 2px solid;}
+.je-inputNumber .icon-plus::after {height: 100%;border-left: 2px solid;}
+.je-inputNumber .icon-minus::before {width: 100%;border-top: 2px solid;}
+
+.je-inputNumber .icon-arrow-up::before {
+  border-style: solid; width: 60%;height: 60%; left: 50%; top: 50%;
+  border-width: 2px 0 0 2px;margin: -10% 0 0 -30%;
+  transform: rotate(45deg);
+}
+.je-inputNumber .icon-arrow-down::before {
+  border-style: solid; width: 60%;height: 60%; left: 50%; top: 50%;
+  border-width: 2px 0 0 2px;
+  margin: -50% 0 0 -30%;
+  transform: rotate(225deg);
+}

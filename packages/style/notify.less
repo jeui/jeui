@@ -1,0 +1,23 @@
+.je-notify {
+  position: fixed;
+  right: 16px;
+  width: 320px;
+  padding: 6px 12px;
+  color: #3f536e;
+  background-color: #fff;
+  border: 1px #e9e9e9 solid;
+  line-height: 1.5;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  -webkit-transition: opacity .3s, top .4s, -webkit-transform .3s;
+  transition: opacity .3s, top .4s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, top .4s;
+  transition: opacity .3s, transform .3s, top .4s, -webkit-transform .3s;
+}
+
+.je-notify-content {
+  flex: 1;
+  padding-right: 8px
+}
+.je-notify-content h3{font-weight: 700;}
+.je-notify-close{position: absolute;top:8px;right:8px;padding: 4px;cursor: pointer;}

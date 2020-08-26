@@ -1,0 +1,81 @@
+.je-tooltip {display:inline-block}
+.je-tooltip-trigger {display:inline-block;position:relative}
+
+.je-tooltip-popper{
+  position:fixed;z-index:1020;
+  &:after,&:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width:0;height:0;z-index: 5;
+    border:6px solid transparent;
+  }
+}
+.je-tooltip-content{
+  padding:8px;color:#333333;font-size:12px;line-height:1.5;border-radius:4px;background-color:rgba(255,255,255,1);word-wrap:break-word;border: 1px #d9d9d9 solid;position: relative;z-index: 2;box-shadow: 0 0 5px rgba(0,0,0,.2);
+  
+}
+/* 向上 */
+.je-tooltip-top,.je-tooltip-top-left,.je-tooltip-top-right{
+  margin-bottom:0px;padding-bottom:7px;
+  &:before{ bottom:-4px;border-top-color:#d9d9d9;}
+  &:after{bottom:-3px;border-top-color:#fff;}
+}
+.je-tooltip-top{
+  &:before,&:after{left:50%;margin-left:-5px;}
+}
+.je-tooltip-top-left{
+  &:before,&:after{left:10px;right:auto;}
+}
+.je-tooltip-top-right{
+  &:before,&:after{left:auto;right:10px;}
+}
+
+
+/* 向下 */
+.je-tooltip-bottom,.je-tooltip-bottom-left,.je-tooltip-bottom-right{
+  margin-top:0px;padding-top:7px;
+  &:before{ top:-4px;border-bottom-color:#d9d9d9;}
+  &:after{top:-3px;border-bottom-color:#fff;}
+}
+.je-tooltip-bottom{
+  &:before,&:after{left:50%;margin-left:-5px;}
+}
+.je-tooltip-bottom-left{
+  &:before,&:after{left:10px;right:auto;}
+}
+.je-tooltip-bottom-right{
+  &:before,&:after{left:auto;right:10px;}
+}
+
+/* 向左 */
+.je-tooltip-left,.je-tooltip-left-top,.je-tooltip-left-bottom{
+  margin-right:0px;padding-right:7px;
+  &:before{ right:-4px;border-left-color:#d9d9d9;}
+  &:after{right:-3px;border-left-color:#fff;}
+}
+.je-tooltip-left{
+  &:before,&:after{top:50%;margin-top:-5px;}
+}
+.je-tooltip-left-top{
+  &:before,&:after{top:10px;bottom:auto;}
+}
+.je-tooltip-left-bottom{
+  &:before,&:after{top:auto;bottom:10px;}
+}
+
+/* 向右 */
+.je-tooltip-right,.je-tooltip-right-top,.je-tooltip-right-bottom{
+  margin-left:0px;padding-left:7px;
+  &:before{ left:-4px;border-right-color:#d9d9d9;}
+  &:after{left:-3px;border-right-color:#fff;}
+}
+.je-tooltip-right{
+  &:before,&:after{top:50%;margin-top:-5px;}
+}
+.je-tooltip-right-top{
+  &:before,&:after{top:10px;bottom:auto;}
+}
+.je-tooltip-right-bottom{
+  &:before,&:after{top:auto;bottom:10px;}
+}

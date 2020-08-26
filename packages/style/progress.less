@@ -1,0 +1,74 @@
+.je-progress{
+  position: relative;line-height: 1;
+  .je-progress-bar{
+    display: -webkit-box;-webkit-box-align: center;
+    box-align: center;position: relative;
+    .je-progress-tempo{
+      border-radius: 100px;
+      background-color: #e5e9f2;
+      overflow: hidden;
+      position: relative;
+      vertical-align: middle;
+      -webkit-box-orient: vertical;
+      -webkit-box-pack: center;
+      -webkit-box-flex: 1;
+      flex: 1;
+      position: relative;
+      span{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: #409eff;
+        text-align: right;
+        border-radius: 100px;
+        line-height: 1;
+        white-space: nowrap;
+        transition: width .6s ease;
+      }
+    }
+    .je-progress-text{
+      width: 50px;
+      color: #606266;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      line-height: 1;
+    }
+    &.success{
+      .je-progress-tempo span{
+      background-color: #67c23a;
+      }
+      .je-progress-text{color: #67c23a;}
+    }
+    &.warning{
+      .je-progress-tempo span{
+      background-color: #e6a23c;
+      }
+      .je-progress-text{color: #e6a23c;}
+    }
+    &.exception{
+      .je-progress-tempo span{
+      background-color: #f56c6c;
+      }
+      .je-progress-text{color: #f56c6c;}
+    }
+  }
+  &.je-progress-block{display: inline-block;}
+  .je-progress-circle,
+  .je-progress-dashboard {
+    position: relative;
+    display: inline-block;
+  
+    .je-progress-text {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      line-height: 1;
+    }
+  }
+}

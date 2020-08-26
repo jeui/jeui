@@ -1,0 +1,48 @@
+.je-switch{
+  min-width: 40px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  background-color: #bfbfbf;
+  vertical-align: middle;
+  cursor: pointer;
+
+  .je-switch-inner {
+    color: #fff;
+    font-size: 12px;
+    padding-left: 22px;
+    padding-right: 6px;
+    line-height: 20px;
+    display: block;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    margin-top: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+  }
+
+  &.je-switch-checked {
+    background-color: #409EFF;
+    
+    &::before{
+      left: 100%;
+      margin-left: -18px;
+      transition: all .3s ease-in-out;
+    }
+
+    .je-switch-inner{
+      padding-left: 6px;
+      padding-right: 22px;
+    }
+  }
+}

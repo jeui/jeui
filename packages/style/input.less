@@ -1,0 +1,39 @@
+.je-input{
+  display: inline-block;
+  .je-input-wrap{
+    width: 100%;display:-webkit-box;display:flex;-webkit-box-align: center;box-align: center;-webkit-box-orient: vertical;box-orient: vertical;position: relative;font-size: 14px;vertical-align: middle;line-height:1.5;
+    
+    header,footer{font-size: inherit;font-weight: 400;color: #515a6e;text-align: center;background-color: #f8f8f9;border: 1px solid #d9d9d9;align-items: center;justify-content: center;display: flex;padding: 0 8px;}
+    
+    main{
+      &.bordered{border:1px solid #d9d9d9;}
+      width: 100%;display: flex;box-flex:1;flex: 1;transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;-webkit-box-sizing: border-box!important;box-sizing: border-box!important;position: relative;background-color:#fff;border-radius: 4px;overflow: hidden;
+      input,textarea{
+        width: 100%;display: flex;box-flex:1;flex: 1;line-height:1.5;padding:5px 8px;outline: 0;border: none;border-radius: 4px;min-height: 26px;font-size: 14px;background-color: transparent;
+      }
+      .je-input-wordlimit,.je-icon{height: 100%;display:-webkit-box;display:flex;-webkit-box-align: center;box-align: center;-webkit-align-items: center;align-items: center;}
+      .je-textarea-wordlimit{position: absolute;right: 8px;bottom: 4px;z-index: 5;}
+      .input-close{display: none;}
+      &.hover,&.normal:hover{border-color: #57a3f3;}
+      &.hover .input-close,
+      &.normal:hover .input-close{display: -webkit-box;display: flex;}
+    }
+    .je-select{
+      margin: -9px -9px;
+      main{
+        &.bordered{border:none;background-color: transparent;}
+      }
+    }
+    .je-dropdown{
+      margin: -9px -9px;
+    }
+    &.je-input-prepend{
+      header{border-radius: 4px 0 0 4px;border-right:none;}
+      main{border-top-left-radius: 0!important;border-bottom-left-radius: 0!important;}
+    } 
+    &.je-input-append{
+      footer{border-radius: 0 4px 4px 0;border-left:none;}
+      main{border-top-right-radius: 0!important;border-bottom-right-radius: 0!important;}
+    }  
+  }
+}

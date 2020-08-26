@@ -1,0 +1,178 @@
+.je-layer{
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .je-layer-mask{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  .je-layer-box {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    overflow: hidden;
+  }
+
+
+  .layer-close {
+    width: 40px;
+    height: 46px;
+    line-height: 46px;
+    color: #999;
+    text-align: center;
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0;
+  }
+
+  .layer-close:hover {
+    color: #ed4014;
+  }
+
+  .layer-head {
+    position: relative;
+    padding: 0px 36px 0px 10px;
+    font-size: 16px;
+    height: 46px;
+    line-height: 46px;
+    background-color: #fff;
+    color: #333;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    .je-icon{vertical-align: middle;}
+    h3{
+      position: relative;
+      -webkit-box-orient: vertical;    
+      -webkit-box-pack: center;
+      -webkit-box-flex: 1;flex: 1;
+    }
+  }
+
+  .je-layer.message {
+    padding: 16px 0 0 0;
+  }
+
+  .je-layer.message .layer-box {
+    position: relative;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .layer-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+  }
+
+  .layer-body {
+    font-size: 14px;
+    background-color: #fff;
+    color: #666;
+    overflow: auto;
+    flex: 1;
+    &.splitline {
+      border-bottom: 1px solid #e8e8e8;
+      border-top: 1px solid #e8e8e8;
+    }
+    .bodyhtml {
+      display: block;
+      flex: 1;
+    }
+  }
+
+
+  .layer-foot {
+    color: #333;
+    display: flex;
+    flex-flow: row;
+    button {
+      margin: 0 5px;
+    }
+    .layer-btn {
+      display: inline-block;
+      padding: 0 15px;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      overflow: visible;
+      cursor: pointer;
+      vertical-align: top;
+      border: 1px solid transparent;
+      font-weight: 400;
+      -webkit-transition: border .2s linear, color .2s linear, width .2s linear, background-color .2s linear;
+      -o-transition: border .2s linear, color .2s linear, width .2s linear, background-color .2s linear;
+      transition: border .2s linear, color .2s linear, width .2s linear, background-color .2s linear;
+      
+      &:hover,&:active,&:focus{
+        text-decoration: none;
+        opacity: .95;
+        filter: alpha(opacity=95);
+        outline: none;
+      }
+    }
+    .layer-btn.default {
+      border-color: #d9d9d9;
+      background-color: #fff;
+      color: #333;
+      &:hover {
+        border-color: #409EFF;
+        background-color: #fff;
+        color: #409EFF;
+      }
+    }
+  }
+
+  .layer-foot .layer-btn[disabled],
+  .layer-foot .layer-btn[disabled]:active,
+  .layer-foot .layer-btn[disabled]:hover {
+    opacity: .6;
+    filter: alpha(opacity=60);
+    cursor: not-allowed;
+  }
+  
+}
+.je-layer-moves {
+  position: fixed;
+  border: 2px #444 solid;
+  cursor: move;
+  border-radius: 4px;
+  overflow: hidden;
+  &::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(233, 233, 233);
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    content: "";
+  }
+}

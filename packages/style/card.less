@@ -1,0 +1,29 @@
+.je-card {
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: .3s;
+  position: relative;
+
+  &.je-card-border {
+    border: 1px solid #e9e9e9;
+  }
+
+  &.je-card-always-shadow,
+  &.je-card-hover-shadow:focus,
+  &.je-card-hover-shadow:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, .15);
+  }
+
+  .je-card-title {
+    border-bottom: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+  }
+
+  .je-card-content {
+    padding: 10px;
+    position: relative;
+  }
+}

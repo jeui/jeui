@@ -1,0 +1,71 @@
+// @import './variable.less';
+
+.@{PF}-bg-default{border-color: @default; background-color: @cf; color:@c4;}
+.@{PF}-light-bg-default{border-color: @default; background-color: @cf; color:@c4;}
+.@{PF}-light-border-default{border-color:@default }
+.@{PF}-btn.@{PF}-light-bg-default[disabled]:hover{border-color: @default; background-color: @cf; color:@c3;}
+.@{PF}-btn.@{PF}-bg-default:hover,
+.@{PF}-btn.@{PF}-light-bg-default:hover{ background-color:#ecf5ff; color:@primary;border-color: #c6e2ff}
+
+
+/* Colors Style*/
+.generalColorLoop(1);
+.generalColorLoop(@i) when (@i < length(@general)+1) {
+  @key:extract(@generalName, @i);
+  .@{PF}-@{key}{ color: extract(@general, @i); }
+  .generalColorLoop(@i+1);
+};
+
+.specialColorLoop(1);
+.specialColorLoop(@i) when (@i < length(@special)+1) {
+  @key:extract(@specialName, @i);
+  .@{PF}-@{key}{ color: extract(@special, @i); }
+  .specialColorLoop(@i+1);
+};
+
+/* Backgrounds Style*/
+.generalBgLoop(1);
+.generalBgLoop(@i) when (@i < length(@general)+1) {
+  @key:extract(@generalName, @i);
+  .@{PF}-bg-@{key}{ background-color: extract(@general, @i); }
+  // .@{PF}-bg-@{key}:hover{background-color: tint(extract(@general, @i),80%);}
+  .generalBgLoop(@i+1);
+};
+
+.specialBgLoop(1);
+.specialBgLoop(@i) when (@i < length(@special)+1) {
+  @key:extract(@specialName, @i);
+  .@{PF}-bg-@{key},.@{PF}-bg-@{key}[disabled]:hover{ background-color: extract(@special, @i); }
+  .@{PF}-bg-@{key}:hover{background-color: tint(extract(@special, @i),20%);border-color: tint(extract(@special, @i),20%);}
+  .specialBgLoop(@i+1);
+};
+
+.lightBgLoop(1);
+.lightBgLoop(@i) when (@i < length(@lightSpecial)+1) {
+  @key:extract(@specialName, @i);
+  .@{PF}-light-bg-@{key}{ background-color: extract(@lightSpecial, @i); }
+  .lightBgLoop(@i+1);
+};
+
+
+/* Border Style 边框颜色*/
+.generalBorderLoop(1);
+.generalBorderLoop(@i) when (@i < length(@general)+1) {
+  @key:extract(@generalName, @i);
+  .@{PF}-border-@{key}{ border-color: extract(@general, @i); }
+  .generalBorderLoop(@i+1);
+};
+
+.specialBorderLoop(1);
+.specialBorderLoop(@i) when (@i < length(@special)+1) {
+  @key:extract(@specialName, @i);
+  .@{PF}-border-@{key}{ border-color: extract(@special, @i); }
+  .specialBorderLoop(@i+1);
+};
+
+.specialLightBorderLoop(1);
+.specialLightBorderLoop(@i) when (@i < length(@borderLightSpecial)+1) {
+  @key:extract(@specialName, @i);
+  .@{PF}-light-border-@{key}{ border-color: extract(@borderLightSpecial, @i); }
+  .specialLightBorderLoop(@i+1);
+};

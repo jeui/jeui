@@ -1,0 +1,55 @@
+@import './variable.less';
+
+@mediaList: 576px,768px,992px,1200px,1920px;
+@gridList: 4.16667%,8.33333%,12.5%,16.66667%,20.83333%,25%,29.16667%,33.33333%,37.5%,41.66667%,45.83333%,50%,54.16667%,58.33333%,62.5%,66.66667%,70.83333%,75%,79.16667%,83.33333%,87.5%,91.66667%,95.83333%,100%;
+
+/* Grid layout */
+[class*='@{PF}-col-'] {float: left;box-sizing: border-box;position:relative;}
+.@{PF}-row {
+  position:relative;box-sizing:border-box;height: auto;zoom:1;
+  &:after {clear:both}
+}
+
+.mediaLoop(1);
+.mediaLoop(@i) when (@i < length(@gridList)+1) {
+  @val:extract(@gridList, @i);
+  .@{PF}-col-@{i} {width:@val;}
+  .@{PF}-col-offset-@{i} {margin-left:@val;}
+  .@{PF}-col-pull-@{i} {right:@val;}
+  .@{PF}-col-push-@{i} {left:@val;}
+  .mediaLoop(@i+1);
+}
+
+.mediaScreenLoop(1);
+.mediaScreenLoop(@i) when (@i < length(@mediaList)+1) {
+  @val:extract(@mediaList, @i);
+  @media only screen and (min-width:@val) {
+    .mediaLoop(1);
+  }
+  .mediaScreenLoop(@i+1);
+}
+
+/* percentage 百分比 */
+.je-w100{width:100%;}
+.je-w95{width:95%;}
+.je-w90{width:90%;}
+.je-w85{width:85%;}
+.je-w80{width:80%;}
+.je-w75{width:75%;}
+.je-w70{width:70%;}
+.je-w67{width:67%;}
+.je-w65{width:65%;}
+.je-w60{width:60%;}
+.je-w55{width:55%;}
+.je-w50{width:50%;}
+.je-w45{width:45%;}
+.je-w40{width:40%;}
+.je-w35{width:35%;}
+.je-w33{width:33%;}
+.je-w30{width:30%;}
+.je-w25{width:25%;}
+.je-w20{width:20%;}
+.je-w15{width:15%;}
+.je-w10{width:10%;}
+.je-w5 {width: 5%;}
+.je-w0 {width:  0;}

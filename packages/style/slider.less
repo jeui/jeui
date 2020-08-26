@@ -1,0 +1,97 @@
+.je-slider-component {
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+}
+.je-slider {
+  position: relative;
+  display: block;
+  border-radius: 15px;
+  background-color: #d8d8d8;
+  cursor: pointer;
+}
+.je-slider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.je-slider-process {
+  position: absolute;
+  border-radius: 15px;
+  background-color: #409eff;
+  transition: all 0s;
+  z-index: 1;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  will-change: width;
+}
+.je-slider-tooltip-container {
+  position: absolute;
+  transition: all 0s;
+  will-change: transform;
+  cursor: pointer;
+  z-index: 3;
+  left: 0;
+  top: -16px;
+}
+.je-slider-tooltip-wrap {
+  /* display: none; */
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  display: block !important;
+}
+.je-slider-tooltip-top {
+  top: -12px;
+  left: 40%;
+  transform: translate(-50%, -100%);
+}
+.je-slider-tooltip {
+  position: relative;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 2px 5px;
+  min-width: 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #409eff;
+  background-color: #409eff;
+}
+.je-slider-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: inherit;
+  transform: translate(-50%, 0);
+}
+.je-slider-range {
+  display: flex;
+  padding: 5px 0;
+  justify-content: space-between;
+}
+.je-slider-separate {
+  position: relative;
+  width: 2px;
+  background-color: #9e9e9e;
+  height: 5px;
+  cursor: pointer;
+}
+.je-slider-separate-text {
+  text-align: center;
+  position: absolute;
+  white-space: nowrap;
+  transform: translate(-50%, 0);
+  top: 6px;
+}

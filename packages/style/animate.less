@@ -1,0 +1,109 @@
+
+@keyframes slideUpIn {
+  0% {opacity:0;transform-origin:0 0;-webkit-transform:translateY(-6px);transform:translateY(-6px)}
+  to {opacity:1;transform-origin:0 0;-webkit-transform:translateY(0);transform:translateY(0)}
+}
+@keyframes slideUpOut {
+  0% {opacity:1;transform-origin:0 0;-webkit-transform:translateY(0);transform:translateY(0)}
+to {opacity:0;transform-origin:0 0;-webkit-transform:translateY(-6px);transform:translateY(-6px)}
+}
+
+@keyframes moveUpIn {
+  0% {opacity:0;transform-origin:0 0;-webkit-transform:translateY(-100%);transform:translateY(-100%)}
+  to {opacity:1;transform-origin:0 0;-webkit-transform:translateY(0);transform:translateY(0)}
+}
+@keyframes moveUpOut {
+  0% {opacity:1;transform-origin:0 0;-webkit-transform:translateY(0);transform:translateY(0)}
+  to {opacity:0;transform-origin:0 0;-webkit-transform:translateY(-100%);transform:translateY(-100%)}
+}
+
+@keyframes fadeIn {0% {opacity:0} to {opacity:1} }
+@keyframes fadeOut {0% {opacity:1} to {opacity:0} }
+
+@keyframes notifyFadeIn {
+  0% {-webkit-transform:translateX(100%);transform:translateX(100%)}
+  to {-webkit-transform:translateX(0);transform:translateX(0)}
+}
+@keyframes notifyFadeOut {0% {opacity:1} to {opacity:0} }
+
+@keyframes scaleIn { 0% {transform:scale(0,0)} to {transform:scale(1,1)} }
+@keyframes scaleOut { 0% {transform:scale(1,1)} to {transform:scale(0,0)} }
+
+@keyframes rotateLoading {
+  0% {-webkit-transform:rotate(0);transform:rotate(0)}
+  to {-webkit-transform:rotate(1turn);transform:rotate(1turn)}
+}
+
+.slide-up-enter-active {animation:slideUpIn .3s ease-in-out both}
+.slide-up-leave-active {animation:slideUpOut .3s ease-in-out both}
+
+.move-up-enter-active {animation:moveUpIn .3s ease-in-out both}
+.move-up-leave-active {animation:moveUpOut .3s ease-in-out both}
+
+.fade-enter-active {animation:fadeIn .3s ease-in-out both}
+.fade-leave-active {animation:fadeOut .3s ease-in-out both}
+
+.notify-fade-enter-active {animation:notifyFadeIn .3s ease-in-out both}
+.notify-fade-leave-active {animation:notifyFadeOut .3s ease-in-out both}
+
+.scale-enter-active{animation:scaleIn .3s ease-in-out both;}
+.scale-leave-active{animation:scaleOut .3s ease-in-out both;}
+
+.spinner{animation: rotateLoading 2s linear infinite;}
+
+
+.jefade-enter-active,.jefade-leave-active {-webkit-animation-duration:.25s;animation-duration:.25s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-play-state:paused;animation-play-state:paused}
+.jefade-enter-active {-webkit-animation-name:jeFadeIn;animation-name:jeFadeIn;-webkit-animation-play-state:running;animation-play-state:running}
+.jefade-leave-active {-webkit-animation-name:jeFadeOut;animation-name:jeFadeOut;-webkit-animation-play-state:running;animation-play-state:running}
+.jefade-enter-active {opacity:0}
+.jefade-enter-active,.jefade-leave-active {-webkit-animation-timing-function:linear;animation-timing-function:linear}
+@keyframes jeFadeIn {0% {opacity:0} to {opacity:1}}
+@keyframes jeFadeOut {0% {opacity:1} to {opacity:0}}
+
+.jeease-enter-active,.jeease-leave-active {-webkit-animation-duration:.2s;animation-duration:.2s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-play-state:paused;animation-play-state:paused}
+.jeease-enter-active {-webkit-animation-name:jeEaseIn;animation-name:jeEaseIn;-webkit-animation-play-state:running;animation-play-state:running}
+.jeease-leave-active {-webkit-animation-name:jeEaseOut;animation-name:jeEaseOut;-webkit-animation-play-state:running;animation-play-state:running}
+.jeease-enter-active {opacity:0}
+.jeease-enter-active,.jeease-leave-active {-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-duration:.2s;animation-duration:.2s}
+@keyframes jeEaseIn {
+  0% {opacity:0;-webkit-transform:scale(.8);transform:scale(.8)}
+  to {opacity:1;-webkit-transform:scale(1);transform:scale(1)}
+}
+@keyframes jeEaseOut {
+  0% {opacity:1;-webkit-transform:scale(1);transform:scale(1)}
+  to {opacity:0;-webkit-transform:scale(.8);transform:scale(.8)}
+}
+// 下拉选择动画
+.jedrop-enter-active {transform-origin: 0 0; animation: jeDropIn .2s cubic-bezier(.23, 1, .32, 1)}
+.jedrop-leave-active {transform-origin: 0 0; animation: jeDropOut .15s cubic-bezier(.755, .05, .855, .06)}
+@keyframes jeDropIn {
+  0% { opacity: 0; transform: scaleY(.8) }
+  to { opacity: 1; transform: scaleY(1) }
+}
+
+@keyframes jeDropOut {
+  0% { opacity: 1; transform: scaleY(1) }
+  to { opacity: 0; transform: scaleY(.8) }
+}
+
+.je-dropdown-appear,.je-dropdown-enter-active,.je-dropdown-leave-active {-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-play-state:paused;animation-play-state:paused}
+.je-dropdown-appear,.je-dropdown-enter-active {-webkit-animation-name:TransitionDropIn;animation-name:TransitionDropIn;-webkit-animation-play-state:running;animation-play-state:running}
+.je-dropdown-leave-active {-webkit-animation-name:TransitionDropOut;animation-name:TransitionDropOut;-webkit-animation-play-state:running;animation-play-state:running}
+.je-dropdown-appear,.je-dropdown-enter-active {opacity:0}
+.je-dropdown-appear,.je-dropdown-enter-active,.je-dropdown-leave-active {-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}
+@-webkit-keyframes TransitionDropIn {
+  0% {opacity:0;-webkit-transform:scaleY(.8);transform:scaleY(.8)}
+  to {opacity:1;-webkit-transform:scaleY(1);transform:scaleY(1)}
+}
+@keyframes TransitionDropIn {
+  0% {opacity:0;-webkit-transform:scaleY(.8);transform:scaleY(.8)}
+  to {opacity:1;-webkit-transform:scaleY(1);transform:scaleY(1)}
+}
+@-webkit-keyframes TransitionDropOut {
+  0% {opacity:1;-webkit-transform:scaleY(1);transform:scaleY(1)}
+  to {opacity:0;-webkit-transform:scaleY(.8);transform:scaleY(.8)}
+}
+@keyframes TransitionDropOut {
+  0% {opacity:1;-webkit-transform:scaleY(1);transform:scaleY(1)}
+  to {opacity:0;-webkit-transform:scaleY(.8);transform:scaleY(.8)}
+}

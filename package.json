@@ -1,0 +1,76 @@
+{
+  "name": "jeui",
+  "version": "1.0.0",
+  "description": "Jeui a set of Vue 2.0 based high quality, simple, easy to use, lightweight front-end UI component library!",
+  "private": false,
+  "main": "lib/jeui.umd.min.js",
+  "unpkg": "lib/jeui.umd.js",
+  "style": "lib/jeui.css",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lib": "vue-cli-service build --target lib --name jeui --dest lib src/index.js",
+    "start": "npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeui/jeui.git"
+  },
+  "keywords": [
+    "jeui",
+    "vue",
+    "component",
+    "components",
+    "ui",
+    "framework"
+  ],
+  "author": "guojun chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeui/jeui/issues"
+  },
+  "homepage": "https://github.com/jeui/jeui#readme",
+  "peerDependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-unit-mocha": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "style-resources-loader": "^1.3.3",
+    "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "files": [
+    "packages/*",
+    "dist/*",
+    "lib/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  }
+}

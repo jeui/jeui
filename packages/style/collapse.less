@@ -1,0 +1,36 @@
+.je-collapse {
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .je-collapse-item {
+    border-bottom: 1px solid #dfdfdf;
+
+    .je-collapse-header {
+      height: 38px;
+      line-height: 38px;
+      padding-left: 16px;
+      color: #666;
+      cursor: pointer;
+      position: relative;
+      border-bottom: 1px solid transparent;
+      transition: all .2s ease-in-out;
+    }
+
+    .je-collapse-body {
+      will-change: height;
+    }
+
+    .je-collapse-content {
+      padding: 16px;
+      color: #3f536e;
+      border-radius: 0 0 4px 4px;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

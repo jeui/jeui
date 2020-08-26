@@ -1,0 +1,56 @@
+.je-message-setbox {
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.je-message-setbox>div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.je-message {
+  position: fixed;
+  left: 0;
+  top: 16px;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: opacity .3s, top .4s, -webkit-transform .3s;
+  transition: opacity .3s, top .4s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, top .4s;
+  transition: opacity .3s, transform .3s, top .4s, -webkit-transform .3s;
+  pointer-events: none;
+
+  .je-message-content {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    z-index: 1010;
+    border-width: 1px;
+    border-style: solid;
+    pointer-events: all;
+
+    >i {
+      vertical-align: text-bottom;
+    }
+
+    .content {
+      padding-left: 8px;
+    }
+  }
+}
+
+.je-centermsg {
+  padding: 12px 14px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border-radius: 4px;
+}

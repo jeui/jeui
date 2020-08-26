@@ -1,0 +1,40 @@
+.je-page {
+  text-align:center;
+  .je-page-align {
+    display:inline-block;
+    >div {float:left;}
+    ul{ 
+      li {
+        padding:0;display:inline-block;vertical-align:middle;height:32px;line-height:30px;margin:0 4px 0 0;
+        button {display:block;background-color:#fff;color:#666;border-radius:4px;transition:all .5s;min-width:34px;line-height:32px;cursor: pointer;}
+        button:hover {color:#2d8cf0}
+        button.active {color:#2d8cf0;}
+        button.disabled {color:#ccc;cursor:not-allowed}
+        button .svg,
+        button .dot{display: block;}
+        button .svg svg{vertical-align: text-top;}
+        button.jump-prev {font-size:10px}
+        button.jump-prev .svg {display: none;}
+        button.jump-prev .dot {display: block;}
+        button.jump-prev:hover .svg {display: block;}
+        button.jump-prev:hover .dot {display: none;}
+        button.jump-next {font-size:10px}
+        button.jump-next .svg {display: none;}
+        button.jump-next .dot {display: block;}
+        button.jump-next:hover .svg {display: block;}
+        button.jump-next:hover .dot {display: none;}
+      }
+      &.border li{
+        button{border:1px solid #d9d9d9;}
+        button:hover {border-color:#2d8cf0;color:#2d8cf0;}
+        button.active {border-color:#2d8cf0;color:#fff;background-color:#2d8cf0;}
+        button.disabled {border-color:#d9d9d9;color:#ccc;background-color:#f7f7f7;}
+      }
+    }
+  }
+  .page-list {margin:0 10px}
+  .show-jumper {display:inline-block}
+  .je-input-control {text-align:center;width:50px;height:32px;line-height:32px;box-sizing:border-box}
+  .je-select{margin-right: 15px;}
+  .total {line-height:32px;}
+}
