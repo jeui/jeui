@@ -1,6 +1,6 @@
 # JEUI
 
-> Jeui is a high quality UI components Library.
+> Jeui a set of Vue 2.0 based high quality, simple, easy to use, lightweight front-end UI component library!
 
 ## Install
 
@@ -25,7 +25,7 @@ You can find more info [on the website](https://www.jemui.com/).
 ```vue
 <template>
   <je-layer v-model="show" >
-    <p>Jeui is a high quality UI components Library.</p>
+    <p>Jeui a set of Vue 2.0 based high quality, simple, easy to use, lightweight front-end UI component library!</p>
   </je-layer>
 </template>
 <script>
