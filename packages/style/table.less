@@ -1,9 +1,14 @@
 .je-table {
+	width: 100%;
+	max-width: 100%;
 	border: 1px solid #e6e6e6;
 	overflow: hidden;
 	position: relative;
 	border-right: none;
 	border-bottom: none;
+	box-sizing: border-box;
+	flex: 1;
+	
 	&::before {
 		content: '';
     position: absolute;
@@ -29,8 +34,8 @@
 	}
 	.table-box {
 		width: 100%;
-		height: 100%;
 		max-width: 100%;
+		height: 100%;
 		overflow: hidden;
 		position: relative;
 		background-color: #fff;
@@ -39,12 +44,18 @@
 		.table-wrap {
 			width: 100%;
 			position: relative;
+			border-collapse: separate;
 			
 			th,td {
+				min-width: 0;
 				border-width: 0 1px 1px 0;
 				border-style: solid;
 				border-color: #e6e6e6;
 				box-sizing: border-box;
+				box-sizing: border-box;
+				text-overflow: ellipsis;
+				vertical-align: middle;
+				position: relative;
 				padding: 5px 0;
 				min-height: 20px;
 				line-height: 24px;
@@ -64,16 +75,16 @@
 			.table-thead {
 				overflow: hidden;
 				position: relative;
+				color:#909090;
 			}
 			.table-wrap {
 				margin: 0 0 -1px 0;
 			}
 		}
 		.table-body {
+			width: 100%;
 			position: relative;
-			margin: 0 -1px -1px 0;
 			overflow: auto;
-			width: inherit;
 			height: 100%;
 
 			.empty {

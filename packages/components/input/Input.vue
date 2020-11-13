@@ -160,9 +160,7 @@ export default {
   data() {
     return {
       isHover: false,
-      // isFocus: false,
       currValue: this.value,
-      // visible: true,
       isSizeObject: false,
       hovering: false,
     };
@@ -173,26 +171,25 @@ export default {
     },
   },
   created() {
-    this.isSizeObject =
-      Object.prototype.toString.call(this.size) == "[object Object]";
+    this.isSizeObject = Object.prototype.toString.call(this.size) == "[object Object]";
   },
   methods: {
     handleKeydown(event) {
-      this.$emit("on-keydown", event);
+      this.$emit("keydown", event);
     },
     handleKeypress(event) {
-      this.$emit("on-keypress", event);
+      this.$emit("keypress", event);
     },
     handleKeyup(event) {
-      this.$emit("on-keyup", event);
+      this.$emit("keyup", event);
     },
     handleFocus(event) {
       this.isHover = true;
-      this.$emit("on-focus", event);
+      this.$emit("focus", event);
     },
     handleBlur(event) {
       this.isHover = false;
-      this.$emit("on-blur", event);
+      this.$emit("blur", event);
       if (this.validateEvent) {
         this.dispatch("jeFormItem", "form-blur", [this.value]);
       }
@@ -206,7 +203,7 @@ export default {
         : Number(this.currValue);
     },
     handleChange(event) {
-      this.$emit("change", event);
+      this.$emit("change", this.currValue);
     },
     handleClear() {
       const e = { target: { value: "" } };

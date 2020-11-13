@@ -60,7 +60,7 @@ export default {
   watch: {
     value (val) {
       this.currValue = val
-      this.$emit('on-change', val)
+      this.$emit('change', val)
     },
     currValue (val) {
       this.checkIsHalf(val)
@@ -91,14 +91,14 @@ export default {
 
       const hoverIndex = this.isHalf ? index - 0.5 : index
       if (hoverIndex !== this.lastHoverIndex) {
-        this.$emit('on-hover-change', hoverIndex)
+        this.$emit('hover-change', hoverIndex)
       }
       this.lastHoverIndex = hoverIndex
     },
     confirmValue (index) {
       if (this.disabled) return
       this.currValue = this.isHalf ? index - 0.5 : index
-      this.$emit('on-change', this.currValue)
+      this.$emit('change', this.currValue)
       this.$emit('input', this.currValue)
     },
     clacClass (index) {

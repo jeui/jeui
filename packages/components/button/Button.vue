@@ -1,6 +1,6 @@
 <template>
   <button
-    type="button"
+    :type="nativeType"
     :class="btnClass"
     :autofocus="autofocus"
     @click="handleClick"
@@ -46,6 +46,11 @@ export default {
     round: {
       type: String,
       default: "4px",
+    },
+    nativeType: {
+      type: String,
+      validator: (val) => ["button", "submit", "reset"].indexOf(val) > -1,
+      default: "button",
     },
   },
   components: {

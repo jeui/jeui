@@ -65,7 +65,7 @@ export default {
       if (this.mode === "inline") return;
       if (val) {
         this.dropWidth = this.parentMenu.width;
-        this.resetDropdownPosition();
+        this.setDropPosition();
       }
     },
   },
@@ -82,7 +82,7 @@ export default {
     });
   },
   methods: {
-    resetDropdownPosition() {
+    setDropPosition() {
       const popover = this.$refs.popover;
       const trigger = this.$refs.trigger;
       const parent = this.$parent;

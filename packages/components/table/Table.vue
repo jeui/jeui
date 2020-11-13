@@ -180,8 +180,7 @@ export default {
     calcAllWidth() {
       let allColsWidth = [], widthValue = 0, miniWidthSize = 0, rawWidth = 0,
         boxWidth = this.$refs.box.clientWidth, totalWidth = 0;      
-      
-      
+            
       // 递归遍历出所有宽度
       (function everyWidth(childs) {
         childs.forEach((child) => {

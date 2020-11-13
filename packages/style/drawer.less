@@ -1,71 +1,146 @@
 .je-drawer {
-  position: relative;
-  overflow: hidden;
-}
-
-.je-drawer .mask {
   position: fixed;
   top: 0;
   right: 0;
-  width: 0;
-  height: 0;
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transition: opacity 0.38s, width 0.1s 0.38s, height 0.1s 0.38s;
-}
-
-.je-drawer.opendrawer .mask {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transition: opacity 0.38s;
-}
-
-.je-drawer .wrap {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  background: #ffffff;
-  transition: all 0.38s;
-  display: flex;
-  flex-direction: column;
-  background-clip: padding-box;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.je-drawer .wrap .drawer-head {
-  color: #333;
-  display: flex;
-  padding: 12px 10px;
-  width: 100%;
-  border-bottom: 1px solid #e8eaec;
-  line-height: 1;
-  font-size: 16px;
-}
-
-.je-drawer .wrap .drawer-content {
-  overflow: auto;
-  flex: 1;
-  padding: 10px;
-}
-
-.je-drawer .wrap .drawer-foot {
-  color: #333;
-  display: flex;
-  padding: 10px;
-}
-
-.je-drawer .wrap.left {
+  bottom: 0;
   left: 0;
-  transform: translate3d(-100%, 0, 0);
+  overflow: hidden;
+  margin: 0;
+
+  .drawer-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.38s, width 0.1s 0.38s, height 0.1s 0.38s;
+    z-index: 10;
+
+    &.opendmask {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transition: opacity 0.38s;
+    }
+  }
+  &.drawer-open .drawer-wrap{
+    &.drawer-right {        
+      animation: right-drawer-in .3s 1ms;
+    }
+    &.drawer-left {        
+      animation: left-drawer-in .3s 1ms;
+    }
+    &.drawer-top {        
+      animation: top-drawer-in .3s 1ms;
+    }
+    &.drawer-bottom {        
+      animation: bottom-drawer-in .3s 1ms;
+    }
+  }
+
+  .drawer-wrap{
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 15;
+
+    &.drawer-left, &.drawer-right {
+      height: 100%;
+      top: 0;
+      bottom: 0
+    }
+    &.drawer-top, &.drawer-bottom {
+      width: 100%;
+      left: 0;
+      right: 0
+    }
+
+    &.drawer-right {
+      right: 0;
+      animation: right-drawer-out .3s;
+    }
+    &.drawer-left {
+      left: 0;
+      animation: left-drawer-out .3s;
+    }
+    &.drawer-top {
+      top: 0;
+      animation: top-drawer-out .3s;
+    }
+    &.drawer-bottom {
+      bottom: 0;
+      animation: bottom-drawer-out .3s;
+    }
+    .drawer-head {
+      color: #333;
+      display: flex;
+      padding: 12px 10px;
+      width: 100%;
+      border-bottom: 1px solid #e8eaec;
+      line-height: 1;
+      font-size: 16px;
+    }
+    
+    .drawer-content {
+      overflow: auto;
+      flex: 1;
+      padding: 10px;
+    }
+    
+    .drawer-foot {
+      color: #333;
+      display: flex;
+      padding: 10px;
+    }
+  }
+
 }
 
-.je-drawer .wrap.right {
-  right: 0;
-  transform: translate3d(100%, 0, 0);
+.drawer-fade-enter-active {
+  animation: drawer-fade-in .3s;
+}
+.drawer-fade-leave-active {
+  animation: drawer-fade-in .3s reverse;
 }
 
-.je-drawer.opendrawer .wrap.left,
-.je-drawer.opendrawer .wrap.right {
-  transform: translate3d(0, 0, 0);
+@keyframes drawer-fade-in {
+  0% { opacity: 0 } to { opacity: 1 }
+}
+
+@keyframes right-drawer-in {
+  0% { transform: translate(100%) }
+  to { transform: translate(0) }
+}
+@keyframes right-drawer-out {
+  0% { transform: translate(0) }
+  to { transform: translate(100%) }
+}
+@keyframes left-drawer-in {
+  0% { transform: translate(-100%) }
+  to { transform: translate(0) }
+}
+@keyframes left-drawer-out {
+  0% { transform: translate(0) }
+  to { transform: translate(-100%) }
+}
+@keyframes top-drawer-in {
+  0% { transform: translateY(-100%) }
+  to { transform: translate(0) }
+}
+@keyframes top-drawer-out {
+  0% { transform: translate(0) }
+  to { transform: translateY(-100%) }
+}
+@keyframes bottom-drawer-in {
+  0% { transform: translateY(100%) }
+  to { transform: translate(0) }
+}
+@keyframes bottom-drawer-out {
+  0% { transform: translate(0) }
+  to { transform: translateY(100%) }
 }

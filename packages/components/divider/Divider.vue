@@ -16,6 +16,7 @@ export default {
     },
     direction: {
       type: String,
+      validator: (val) => ["left", "center", "right"].indexOf(val) > -1,
       default: "left"
     },
     dashed:{
@@ -25,14 +26,13 @@ export default {
   },
   computed: {
     dividerClass(){
-      let that = this;
       return [
         'je-divider',
         {
-          [`nodivider`]: !that.$slots.default,
-          [`je-divider-${that.type}`]: that.type,
-          [`je-divider-${that.direction}`]: that.direction,
-          ['dashed']: !!that.dashed
+          [`nodivider`]: !this.$slots.default,
+          [`je-divider-${this.type}`]: this.type,
+          [`je-divider-${this.direction}`]: this.direction,
+          ['dashed']: !!this.dashed
         }
       ]
     }

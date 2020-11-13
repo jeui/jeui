@@ -1,7 +1,7 @@
 {
   "name": "jeui",
-  "version": "1.0.0",
-  "description": "Jeui a set of Vue 2.0 based high quality, simple, easy to use, lightweight front-end UI component library!",
+  "version": "1.0.2",
+  "description": "Jeui is a high quality UI components Library",
   "private": false,
   "main": "lib/jeui.umd.min.js",
   "unpkg": "lib/jeui.umd.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeui/jeui.git"
+    "url": "git+https://github.com/singod/jeui.git"
   },
   "keywords": [
     "jeui",
@@ -26,9 +26,9 @@
   "author": "guojun chen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeui/jeui/issues"
+    "url": "https://github.com/singod/jeui/issues"
   },
-  "homepage": "https://github.com/jeui/jeui#readme",
+  "homepage": "https://github.com/singod/jeui#readme",
   "peerDependencies": {
     "vue": "^2.6.10"
   },
@@ -43,15 +43,6 @@
     "vue-style-loader": "^4.1.1",
     "vue-template-compiler": "^2.6.10"
   },
-  "files": [
-    "packages/*",
-    "dist/*",
-    "lib/*",
-    "src/*",
-    "public/*",
-    "*.json",
-    "*.js"
-  ],
   "eslintConfig": {
     "root": true,
     "env": {

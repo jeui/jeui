@@ -138,13 +138,13 @@ export default {
   },
   watch: {
     //监听子组件currentValue是否改变
-    currValue(val) {
-      val = val.replace(/[^\d.]/g, "");
+    currValue(newValue,oldValue) {
+      newValue = newValue.replace(/[^\d.]/g, "");
       //$emit与父组件通信  （子组件-->父组件）
       //this指向当前组件实例
-      this.$emit("input", val);
+      this.$emit("input", newValue);
       //定义自定义函数进行通信
-      this.$emit("inputChange", val);
+      this.$emit("change", newValue , oldValue);
       if (this.validateEvent) {
         this.dispatch("jeFormItem", "form-blur", [this.value]);
       }
@@ -163,14 +163,14 @@ export default {
     },
     focus(event) {
       this.focused = true;
-      this.$emit("on-focus", event);
+      this.$emit("focus", event);
     },
     blur(event) {
       this.focused = false;
       if (this.currValue == "") {
         this.currValue = this.min;
       }
-      this.$emit("on-blur", event);
+      this.$emit("blur", event);
       if (this.validateEvent) {
         this.dispatch("jeFormItem", "form-blur", [this.value]);
       }

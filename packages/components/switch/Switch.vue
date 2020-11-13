@@ -30,14 +30,20 @@ export default {
       default: false
     },
     trueColor: {
-      type: String
+      type: String,
+      default: ""
     },
     falseColor: {
-      type: String
+      type: String,
+      default: ""
     },
-    size: String,
+    size: {
+      type: String,
+      default: ""
+    },
     name: {
-      type: String
+      type: String,
+      default: ""
     },
   },
   data () {

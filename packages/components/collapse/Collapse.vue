@@ -81,7 +81,7 @@ export default {
         newActiveKey = activeKey
       }
       this.currValue = newActiveKey
-      this.$emit('onChange', this.currValue)
+      this.$emit('change', this.currValue)
     },
     valueCheck (val) {
       return typeof val === 'number' ? `${val}` : val

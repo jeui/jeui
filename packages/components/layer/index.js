@@ -5,8 +5,8 @@ const instanceLayer = Vue.extend(jeLayer);
 // 绑定window的history事件
 window.addEventListener('popstate', () => {
   if (instance) {
-      insatnce.value = false; 
-      instance = null;
+    insatnce.value = false; 
+    instance = null;
   }
 });
 

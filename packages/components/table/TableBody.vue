@@ -12,7 +12,7 @@
     <tbody v-else>
       <template v-for="(row,index) in data">
       <tr :key="index">
-        <td v-for="(item,idx) in bodyColumn" :key="idx" :align="item.align" 
+        <td rowspan="1" colspan="1" v-for="(item,idx) in bodyColumn" :key="idx" :align="item.align" 
         :class="`je-table_${TUID}_column_${TUID}${idx}`">
           <TableTd :column="item" :row="row" :index="idx" />
         </td>       

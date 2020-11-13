@@ -463,6 +463,34 @@ je.deepClone = function(parent) {
   return Clones(parent);
 };
 
+je.merge = function () {
+  var target = arguments[0], len = arguments.length, args = new Array(len > 1 ? len - 1 : 0), i = 1;
+  for (len, args, i; i < len; i++) {
+    args[i - 1] = arguments[i]
+  }
+  return args.reduce(function (acc, cur) {
+    return Object.keys(cur).reduce(function (subAcc, key) {
+      var srcVal = cur[key];
+      if (je.isType(srcVal,'object')) { 
+        subAcc[key] = je.merge(subAcc[key] ? subAcc[key] : {}, srcVal)
+      } else {
+        if (je.isType(srcVal,'array')) {
+          subAcc[key] = srcVal.map(function (item, idx) {
+            if (je.isType(item,'object')) {
+              var curAccVal = subAcc[key] ? subAcc[key] : [];
+              return je.merge(curAccVal[idx] ? curAccVal[idx] : {}, item)
+            } else {
+              return item
+            }
+          })
+        } else {
+          subAcc[key] = srcVal
+        }
+      }
+      return subAcc
+    }, acc)
+  }, target)
+};
 
 je.deepCopy = function(data){
   var deepCopy = function (data) {

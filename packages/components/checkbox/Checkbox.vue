@@ -1,11 +1,30 @@
 <template>
   <label :class="checkboxClass">
-    <input hidden v-if="isGroup" type="checkbox" class="je-checkbox-input"
-      :disabled="disabled" :value="label" v-model="model" :name="name"
-      @change="change" @focus="focus = true" @blur="focus = false">
-    <input hidden v-else type="checkbox" class="je-checkbox-input"
-      :disabled="disabled" :checked="currValue" :name="name"
-      @change="change" @focus="focus = true" @blur="focus = false">
+    <input
+      hidden
+      v-if="isGroup"
+      type="checkbox"
+      class="je-checkbox-input"
+      :disabled="disabled"
+      :value="label"
+      v-model="model"
+      :name="name"
+      @change="change"
+      @focus="focus = true"
+      @blur="focus = false"
+    />
+    <input
+      hidden
+      v-else
+      type="checkbox"
+      class="je-checkbox-input"
+      :disabled="disabled"
+      :checked="currValue"
+      :name="name"
+      @change="change"
+      @focus="focus = true"
+      @blur="focus = false"
+    />
     <span class="je-checkbox-wrap" v-if="!isButton">
       <span :class="innerClass"></span>
     </span>
@@ -16,113 +35,110 @@
 </template>
 
 <script>
-import { findComponentUpward } from '../../utils/findComponent'
-import Emitter from '../../utils/emitter'
+import { findComponentUpward } from "../../utils/findComponent";
+import Emitter from "../../utils/emitter";
 export default {
-  name:"jeCheckbox",
+  name: "jeCheckbox",
   props: {
     value: {
       type: [String, Number, Boolean],
-      default: false
+      default: false,
     },
     label: {
       type: [String, Number, Boolean],
-      default: ''
+      default: "",
     },
     name: [String, Number],
     checked: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     size: {
       type: [String, Number],
-      default:'mini'
+      default: "mini",
     },
     indeterminate: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   mixins: [Emitter],
-  data () {
+  data() {
     return {
       model: [],
       focus: false,
       isGroup: false,
       currValue: this.value,
       checkSize: this.size,
-      parent: findComponentUpward(this, 'jeCheckboxGroup'),
+      parent: findComponentUpward(this, "jeCheckboxGroup"),
       isButton: false,
-      isBorder: false
-    }
+      isBorder: false,
+    };
   },
   watch: {
-    value (value) {
-      this.updateModel()
-    }
+    value(value) {
+      this.updateModel();
+    },
   },
-  mounted () {
+  mounted() {
     if (this.parent) {
-      if(this.parent.type === 'button'){
-        this.isButton = true
+      if (this.parent.type === "button") {
+        this.isButton = true;
       }
-      if(this.parent.type === 'border'){
-        this.isBorder = true
+      if (this.parent.type === "border") {
+        this.isBorder = true;
       }
-      if(this.parent.size !== ''){
-        this.checkSize = this.parent.size
+      if (this.parent.size !== "") {
+        this.checkSize = this.parent.size;
       }
-      this.isGroup = true
-      this.parent.updateModel()
+      this.isGroup = true;
+      this.parent.updateModel();
     } else {
-      this.updateModel()
+      this.updateModel();
     }
     if (this.checked) {
-      this.currValue = this.checked
+      this.currValue = this.checked;
     }
   },
   methods: {
-    updateModel () {
-      this.currValue = this.value
+    updateModel() {
+      this.currValue = this.value;
     },
-    change (evt) {
-      if (this.disabled) return false
-      this.currValue = evt.target.checked
-      this.$emit('input', this.currValue)
+    change(evt) {
+      if (this.disabled) return false;
+      this.currValue = evt.target.checked;
+      this.$emit("input", this.currValue);
       if (this.isGroup) {
-        this.parent.change(this.model)
+        this.parent.change(this.model);
       } else {
-        this.$emit('change', this.currValue)
+        this.$emit("change", this.currValue);
       }
-    }
-  },
-  computed:{
-    checkboxClass(){
-      return [
-        'je-checkbox',
-        'je-align-center',
-        'je-justify-left',
-        {
-          ['je-checkbox-checked']: this.currValue && !this.disabled,
-          ['je-checkbox-button']: this.isButton,
-          ['je-checkbox-normal']: !this.isButton ,
-          ['je-checkbox-border']: this.isBorder,
-          ['je-checkbox-disabled']: this.disabled,
-          [`je-${this.checkSize}`]: this.checkSize
-        }
-      ]
     },
-    innerClass(){
+  },
+  computed: {
+    checkboxClass() {
       return [
-        'je-checkbox-inner', 
-        {'indeterminate': this.indeterminate}
-      ]
-    }
-  }
-}
+        "je-checkbox",
+        "je-align-center",
+        "je-justify-left",
+        {
+          ["je-checkbox-checked"]: this.currValue && !this.disabled,
+          ["je-checkbox-button"]: this.isButton,
+          ["je-checkbox-normal"]: !this.isButton,
+          ["je-checkbox-border"]: this.isBorder,
+          ["je-checkbox-disabled"]: this.disabled,
+          [`je-${this.checkSize}`]: this.checkSize,
+        },
+      ];
+    },
+    innerClass() {
+      return ["je-checkbox-inner", { indeterminate: this.indeterminate }];
+    },
+  },
+};
 </script>
 
